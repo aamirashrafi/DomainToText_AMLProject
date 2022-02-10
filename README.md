@@ -41,4 +41,6 @@ you have to execute the command:
 ```
 pip install torch==1.4.0
 ```
-
+# STEPS
+1. Initial Directory Setup: Before start I would like to give a brief about directory structure of projects. Basically we have two projects, one is DomainToText_AMLProject and second one is DescribingTextures(https://github.com/ChenyunWu/DescribingTextures). All the files related to DomainToText_AMLProject are under /content/drive/MyDrive/DomainToText_AMLProject directory, and all the files related to DescribingTextures are under /content/drive/MyDrive/DescribingTextureCopy/DescribingTextures directory. For the sake of simplicity and avoiding each time change the path in the code I would prefer 1st to move in the project directory and then run the respective code to train the model.
+2. Label the PACS dataset describing the visual domain attributes
