@@ -30,8 +30,10 @@ def cosine_sim(a,b):
 parser = argparse.ArgumentParser(description='PyTorch Implementation')
 
 parser.add_argument('--target', type=str, default='ArtPainting', metavar='N', help='target dataset')
-parser.add_argument('--path_to_txt', type=str,default='/.../DomainToText_AMLProject/data/PACS', help='path to the txt files')
-parser.add_argument('--path_to_dataset', type=str, default='/.../DomainToText_AMLProject/',help='path to the dataset')
+#parser.add_argument('--path_to_txt', type=str,default='/.../DomainToText_AMLProject/data/PACS', help='path to the txt files')
+parser.add_argument('--path_to_txt', type=str,default='./data/PACS', help='path to the txt files')
+# parser.add_argument('--path_to_dataset', type=str, default='/.../DomainToText_AMLProject/PACS',help='path to the dataset')
+parser.add_argument('--path_to_dataset', type=str, default='./',help='path to the dataset')
 parser.add_argument('--num_classes', type=int, default=7, help='size for the crop')
 parser.add_argument('--gpu', type=int, default=0,help='gpu index')
 args = parser.parse_args()
@@ -42,11 +44,12 @@ torch.cuda.set_device(args.gpu)
 def main():
 
     print(args)
+    print('äsdasfs')
     target_txt = args.path_to_txt + '/' + args.target + '.txt'
 
     # dataloaders creation
     dataset_test_target = dataset_read_eval(target_txt, args)
-
+    
     sources = ['ArtPainting','Cartoon','Photo','Sketch']
     sources.remove(args.target)
     print('Sources ' + sources[0] + ', ' + sources[1] + ', ' + sources[2])
@@ -98,8 +101,8 @@ def main():
     vec_dim = 256
     resnet101_texture_model = TripletMatch(vec_dim=vec_dim,distance='cos', img_feats=(2, 4))
     #model_path = 'outputs/triplet_match/BEST_checkpoint.pth'
-    model_path = model_path = '../../MyDrive/DescribingTextureCopy/DescribingTextures/output/triplet_match/temp/checkpoints/BEST_checkpoint.pth'
-    
+    model_path = '../../MyDrive/DescribingTextureCopy/DescribingTextures/output/triplet_match/temp/checkpoints/BEST_checkpoint.pth'
+
     resnet101_texture_model = resnet101_texture_model.cuda()
     resnet101_texture_model.load_state_dict(torch.load(model_path), strict=False)
     print('Model pretrained on Textures loaded')
