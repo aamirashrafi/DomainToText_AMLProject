@@ -24,7 +24,7 @@ Then, you have to put the "outputs" folder into
 ```
 /DomainToText_AMLProject/
 ```
-
+**Note** :For reproducing the baseline please make sure that in line#103 uncomment and comment line#104. It is basically path to weights file. 
 
 ## Environment
 
@@ -42,5 +42,6 @@ you have to execute the command:
 pip install torch==1.4.0
 ```
 # STEPS
-1. Initial Directory Setup: Before start I would like to give a brief about directory structure of projects. Basically we have two projects, one is DomainToText_AMLProject and second one is DescribingTextures(https://github.com/ChenyunWu/DescribingTextures). All the files related to DomainToText_AMLProject are under /content/drive/MyDrive/DomainToText_AMLProject directory, and all the files related to DescribingTextures are under /content/drive/MyDrive/DescribingTextureCopy/DescribingTextures directory. For the sake of simplicity and avoiding each time change the path in the code I would prefer 1st to move in the project directory and then run the respective code to train the model.
-2. Label the PACS dataset describing the visual domain attributes
+1. **Initial Directory Setup:** Before start I would like to give a brief about directory structure of projects. Basically we have two projects, one is DomainToText_AMLProject and second one is DescribingTextures(https://github.com/ChenyunWu/DescribingTextures). All the files related to DomainToText_AMLProject are under /content/drive/MyDrive/DomainToText_AMLProject directory, and all the files related to DescribingTextures are under /content/drive/MyDrive/DescribingTextureCopy/DescribingTextures directory. For the sake of simplicity and avoiding each time change the path in the code I would prefer 1st to move in the project directory and then run the respective code to train the model.
+2. **Label the PACS dataset describing the visual domain attributes:** We label our assigned image manually. These lables are in the file image_descriptions.json. We also need to create image split file image_splits.json. These two files can be found here https://drive.google.com/drive/folders/1g41kTfoCQGdhCtIbfrO0fijLYeCrgc1B?usp=sharing.
+3. 
