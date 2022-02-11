@@ -58,8 +58,8 @@ and image_descriptions.json and image_splits.json should me in the directory
 data_api/data/image_descriptions.json
 data_api/data/image_splits.json
 ```
-4. ** Set Sentence Encoder:** We need to set ``Bert`` as sentense encoder. So in the config_default.py file me need to write C.MODEL.LANG_ENCODER = 'bert'.  To train this model,  the eval-uation split was intended to be the same as the train-ing  split.
-5. ***BEST_checkpoints.pth:** When the image retrieval and phrase retrieval MAP on the validation set stopped improving, the model training will be stopped, and we will get the best weights under output/triplet_match/temp/checkpoints directory.
-6. ** Retrain DomainToText with BEST_checkpoints.pth:** Now we have to train our DomainToText model with new best weights. For applying new best weights either we can replace BEST_checkpoints.pth file or we can set path to BEST_checkpoints.pth file in eval_ensamble.py. So we need to make sure that in eval_ensamble.py line#103 should be commented and line#104 should me un-commented.
-7. *Train the model:* Now we can train the model and observe the result. 
+4. **Set Sentence Encoder:** We need to set ``Bert`` as sentense encoder. So in the config_default.py file me need to write C.MODEL.LANG_ENCODER = 'bert'.  To train this model,  the eval-uation split was intended to be the same as the train-ing  split.
+5. **BEST_checkpoints.pth:** When the image retrieval and phrase retrieval MAP on the validation set stopped improving, the model training will be stopped, and we will get the best weights under output/triplet_match/temp/checkpoints directory.
+6. **Retrain DomainToText with BEST_checkpoints.pth:** Now we have to train our DomainToText model with new best weights. For applying new best weights either we can replace BEST_checkpoints.pth file or we can set path to BEST_checkpoints.pth file in eval_ensamble.py. So we need to make sure that in eval_ensamble.py line#103 should be commented and line#104 should me un-commented.
+7. **Train the model:** Now we can train the model and observe the result. 
 
