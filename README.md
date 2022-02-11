@@ -42,8 +42,8 @@ you have to execute the command:
 pip install torch==1.4.0
 ```
 # STEPS
-1. **Initial Directory Setup:** Before start I would like to give a brief about directory structure of projects. Basically we have two projects, one is DomainToText_AMLProject and second one is DescribingTextures(**Updated Version of DescribingTexture:** https://github.com/aamirashrafi/DescribingTextures). All the files related to DomainToText_AMLProject are under /content/drive/MyDrive/DomainToText_AMLProject directory, and all the files related to DescribingTextures are under /content/drive/MyDrive/DescribingTextureCopy/DescribingTextures directory. For the sake of simplicity and avoiding each time change the path in the code I would prefer 1st to move in the project directory and then run the respective code to train the model.
-2. **Label the PACS dataset describing the visual domain attributes:** We label our assigned images manually. These lables are in the file image_descriptions.json. We also need to create image split file image_splits.json. These two files can be found here https://drive.google.com/drive/folders/1g41kTfoCQGdhCtIbfrO0fijLYeCrgc1B?usp=sharing.
+1. **Initial Directory Setup:** Before start I would like to give a brief about directory structure of projects. Basically we have two projects, one is DomainToText_AMLProject and second one is DescribingTextures(**Modified Version of DescribingTexture:** https://github.com/aamirashrafi/DescribingTextures). All the files related to DomainToText_AMLProject are under /content/drive/MyDrive/DomainToText_AMLProject directory, and all the files related to DescribingTextures are under /content/drive/MyDrive/DescribingTextureCopy/DescribingTextures directory. For the sake of simplicity and avoiding each time change the path in the code I would prefer 1st to move in the project directory and then run the respective code to train the model.
+2. **Label the PACS dataset describing the visual domain attributes:** We have labeled our assigned images manually. These lables are in the file image_descriptions.json. We also need to create image split file image_splits.json. These two files can be found here https://drive.google.com/drive/folders/1g41kTfoCQGdhCtIbfrO0fijLYeCrgc1B?usp=sharing.
 3. **Traing DescribingTexture Model:** Place the dataset in the DescribingTextures folder making sure that the images are organized in this way:
 
 ```
@@ -58,7 +58,7 @@ and image_descriptions.json and image_splits.json should me in the directory
 data_api/data/image_descriptions.json
 data_api/data/image_splits.json
 ```
-4. **Set Sentence Encoder:** We need to set ``Bert`` as sentense encoder. So in the config_default.py file me need to write C.MODEL.LANG_ENCODER = 'bert'.  To train this model,  the eval-uation split was intended to be the same as the train-ing  split.
+4. **Set Sentence Encoder:** We need to set ``Bert`` as sentense encoder. So in the config_default.py file me need to write C.MODEL.LANG_ENCODER = 'bert'.  To train this model,  the evaluation split was intended to be the same as the training  split.
 5. **BEST_checkpoints.pth:** When the image retrieval and phrase retrieval MAP on the validation set stopped improving, the model training will be stopped, and we will get the best weights under output/triplet_match/temp/checkpoints directory.
 6. **Retrain DomainToText with BEST_checkpoints.pth:** Now we have to train our DomainToText model with new best weights. For applying new best weights either we can replace BEST_checkpoints.pth file or we can set path to BEST_checkpoints.pth file in eval_ensamble.py. So we need to make sure that in eval_ensamble.py line#103 should be commented and line#104 should me un-commented.
 7. **Train the model:** Now we can train the model and observe the result. 
