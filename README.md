@@ -61,5 +61,6 @@ data_api/data/image_splits.json
 4. **Set Sentence Encoder:** We need to set ``Bert`` as sentense encoder. So in the config_default.py file me need to write C.MODEL.LANG_ENCODER = 'bert'.  To train this model,  the evaluation split was intended to be the same as the training  split.
 5. **BEST_checkpoints.pth:** When the image retrieval and phrase retrieval MAP on the validation set stopped improving, the model training will be stopped, and we will get the best weights under output/triplet_match/temp/checkpoints directory.
 6. **Retrain DomainToText with BEST_checkpoints.pth:** Now we have to train our DomainToText model with new best weights. For applying new best weights either we can replace BEST_checkpoints.pth file or we can set path to BEST_checkpoints.pth file in eval_ensamble.py. So we need to make sure that in eval_ensamble.py line#103 should be commented and line#104 should me un-commented.
-7. **Train the model:** Now we can train the model and observe the result. 
+7. **Train the model:** Now we can train the model and observe the result.
+8. **Alternate Way:** Alternatively, All the task can be done by sequential running cells of ``DomainToText.ipynb" in colab. But make sure the folder structure as it is stated in STEP#1. 
 
