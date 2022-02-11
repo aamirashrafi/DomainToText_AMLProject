@@ -43,5 +43,18 @@ pip install torch==1.4.0
 ```
 # STEPS
 1. **Initial Directory Setup:** Before start I would like to give a brief about directory structure of projects. Basically we have two projects, one is DomainToText_AMLProject and second one is DescribingTextures(https://github.com/ChenyunWu/DescribingTextures). All the files related to DomainToText_AMLProject are under /content/drive/MyDrive/DomainToText_AMLProject directory, and all the files related to DescribingTextures are under /content/drive/MyDrive/DescribingTextureCopy/DescribingTextures directory. For the sake of simplicity and avoiding each time change the path in the code I would prefer 1st to move in the project directory and then run the respective code to train the model.
-2. **Label the PACS dataset describing the visual domain attributes:** We label our assigned image manually. These lables are in the file image_descriptions.json. We also need to create image split file image_splits.json. These two files can be found here https://drive.google.com/drive/folders/1g41kTfoCQGdhCtIbfrO0fijLYeCrgc1B?usp=sharing.
-3. 
+2. **Label the PACS dataset describing the visual domain attributes:** We label our assigned images manually. These lables are in the file image_descriptions.json. We also need to create image split file image_splits.json. These two files can be found here https://drive.google.com/drive/folders/1g41kTfoCQGdhCtIbfrO0fijLYeCrgc1B?usp=sharing.
+3. **Traing DescribingTexture Model:** Place the dataset in the DescribingTextures folder making sure that the images are organized in this way:
+
+```
+data_api/data/images/art_painting/dog/pic_001.jpg
+data_api/data/images/art_painting/dog/pic_002.jpg
+data_api/data/images/art_painting/dog/pic_003.jpg
+...
+```
+and image_descriptions.json and image_splits.json should me in the directory
+
+```
+data_api/data/image_descriptions.json
+data_api/data/image_splits.json
+```
